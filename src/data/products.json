@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+        "description": "Computadora portátil de última generación, ideal para trabajo y entretenimiento.",
+        "price": 85000,
+        "img": "http://localhost:3000/images/laptop.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Mouse inalámbrico",
+        "description": "Mouse ergonómico con tecnología inalámbrica para mayor comodidad.",
+        "price": 1200,
+        "img": "http://localhost:3000/images/mouse-inalambrico.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Monitor 4K",
+        "description": "Monitor de alta resolución con calidad de imagen excepcional para disfrutar al máximo del contenido multimedia.",
+        "price": 32000,
+        "img": "http://localhost:3000/images/monitor-4k.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Teclado mecánico",
+        "description": "Teclado con interruptores mecánicos que brindan una experiencia de escritura única y duradera.",
+        "price": 4500,
+        "img": "http://localhost:3000/images/teclado-mecanico.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Disco duro externo",
+        "description": "Almacena tus archivos importantes y lleva tus datos a todas partes con este disco duro externo de gran capacidad.",
+        "price": 3500,
+        "img": "http://localhost:3000/images/disco-duro-externo.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Impresora láser",
+        "description": "Impresora rápida y eficiente para imprimir documentos con calidad profesional.",
+        "price": 9500,
+        "img": "http://localhost:3000/images/impresora-laser.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Auriculares gamer",
+        "description": "Auriculares con sonido envolvente para una experiencia de juego inmersiva.",
+        "price": 2800,
+        "img": "http://localhost:3000/images/auriculares-gamer.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Tablet Android",
+        "description": "Tablet con sistema operativo Android, perfecta para navegación web y entretenimiento.",
+        "price": 6700,
+        "img": "http://localhost:3000/images/tablet-android.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Cámara web HD",
+        "description": "Cámara web de alta definición para videoconferencias y transmisiones en vivo.",
+        "price": 2800,
+        "img": "http://localhost:3000/images/webcam-hd.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Router inalámbrico",
+        "description": "Router de alta velocidad para una conexión a Internet estable en toda tu red.",
+        "price": 3200,
+        "img": "http://localhost:3000/images/router-inalambrico.jpg"
+    }
+]
