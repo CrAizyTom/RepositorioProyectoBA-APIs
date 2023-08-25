@@ -1,43 +1,40 @@
-const path = require('path');
-const fs = require('fs');
-
-let rout = path.resolve(__dirname, '../data/products.json');
-let jsonProduct = fs.readFileSync(rout);
-let products = JSON.parse(jsonProduct);
+const Product = require('../database/models/Product');
 
 const controller = {
-    listar: (req, res)=> {
-        res.json(products);
+    list: async (req, res)=> {
+        const products = await Product.find({})
+        res.status(200).json(products);
     },
-    crear: (req, res)=> {
-        let product = {};
-       
-        if (!req.body.name) {
-            return res.json({mgs: 'El campo es necesario.'});
-       };
-       
-        product.id = products.length + 1;
-        product.name = req.body.name;
-        product.description = req.body.description;
-        product.price = req.body.price;
-        product.image = req.body.image;
-        products.push(product);
-        
-        let productsStringify = JSON.stringify(products, null, 4);
-        fs.writeFileSync(rout, productsStringify);
-        res.status(201).json(product)
-        res.json(products);
+    name: async (req, res)=> {
+        const name = req.params.name;
+        const product = await Product.find({name: name});
+        res.status(200).json(product);
     },
-    detalle: (req, res)=> {
-        let details = products.map(product => {
-            return [product.name, product.description, product.price];
-        });
-        res.json(details);
+    create: async (req, res)=> {
+        try{
+            let product = {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                img: req.files.filename
+            };
+            const productCreate = await Product.create(product);
+            res.status(201).json(productCreate);
+        }catch(error){
+            res.status(500).json({message: 'Internal Server Error'});
+        };
     },
-    name: (req, res)=> {
-        let name = req.params.name;
-        let product = products.filter(product => product.name == name);
-        res.json(product);
+    modify: async (req, res)=> {
+            const productModify = await Product.findByIdAndUpdate(req.params.id, req.body);
+            return res.status(200).json(productModify);
+    },
+    update: async (req, res)=> {
+        const productUpdate = await Product.findByIdAndUpdate(req.params.id, req.body);
+        return res.status(200).json(productUpdate);
+    },
+    delete: async (req, res)=> {
+        const productDelete = await Product.findByIdAndDelete(req.params.id);
+        return res.status(200).json(productDelete);
     }
 };
 
